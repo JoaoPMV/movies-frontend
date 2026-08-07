@@ -1,0 +1,56 @@
+.login-container {
+  background-image: url('/images/back-image.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: .5rem;
+  margin-right: .5rem;
+}
+
+.login-form input {
+  width: 100%;
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+
+  .login-form {
+    width: 30%;
+    margin-right: 10rem;
+  }
+
+}
+
+/* Laptops */
+@media (min-width: 1024px) {
+  .login-form {
+    width: 30%;
+    margin-right: 15rem;
+  }
+
+}
+
+/* Monitores grandes */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* Telas muito grandes */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1400px;
+  }
+}

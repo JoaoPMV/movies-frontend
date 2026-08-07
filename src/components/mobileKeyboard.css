@@ -1,0 +1,25 @@
+.mobile-keyboard-wrap {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.25);
+  height: 30vh;
+}
+
+.mobile-keyboard .hg-button {
+  height: 25px;
+  font-size: 16px;
+  margin: 2px
+}
+
+@media (min-width: 768px) {
+  .mobile-keyboard-wrap {
+    padding: 0 10rem;
+  }
+
+  .mobile-keyboard .hg-button {
+    height: 35px;
+    font-size: 16px;
+  }
+}

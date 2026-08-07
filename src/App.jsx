@@ -1,16 +1,7 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Movies from "./Movies";
+import AppRoutes from "./routes/Routes";
 
 function App() {
-  return (
-    <BrowserRouter basename="/demo-movies">
-      <Routes>
-        <Route path="/" element={<Movies />} />
-        <Route path="*" element={<Navigate to="/" />} />{" "}
-        {/* Garante fallback */}
-      </Routes>
-    </BrowserRouter>
-  );
+  return <AppRoutes />;
 }
 
 export default App;
