@@ -8,12 +8,12 @@ import List from "../pages/list/List";
 function PrivateRoute({ children }) {
   const token = localStorage.getItem("token");
 
-  return token ? children : <Navigate to="/login" />;
+  return token ? children : <Navigate to="/" />;
 }
 
 const AppRoutes = () => {
   return (
-    <BrowserRouter basename="/demo-movies">
+    <BrowserRouter>
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/" element={<Login />} />
