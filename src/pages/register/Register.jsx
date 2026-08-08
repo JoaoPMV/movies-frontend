@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { registerUser } from "../../../api";
+import { Link } from "react-router-dom";
 
 import "./Register.css";
 
@@ -49,7 +50,7 @@ const Register = () => {
 
   return (
     <div className="register-container">
-      <form className="register-form" onSubmit={handleSubmit}>
+      <form className="register-area" onSubmit={handleSubmit}>
         <h3>Register</h3>
 
         <input
@@ -90,6 +91,11 @@ const Register = () => {
 
         <button type="submit">Register</button>
       </form>
+      <div className="login-link">
+        <p>
+          Already have an account? <Link to="/login">Login here</Link>
+        </p>
+      </div>
     </div>
   );
 };

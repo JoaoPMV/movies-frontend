@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../../api";
+import { Link } from "react-router-dom";
 
 import "./Login.css";
 
@@ -36,8 +37,8 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <form className="login-form" onSubmit={handleSubmit}>
-        <h2>Login</h2>
+      <form className="login-area" onSubmit={handleSubmit}>
+        <h3>Login</h3>
         <input
           type="email"
           name="email"
@@ -56,6 +57,11 @@ const Login = () => {
 
         <button type="submit">Entrar</button>
       </form>
+      <div className="register-link">
+        <p>
+          Don't have an account? <Link to="/register">Register here</Link>
+        </p>
+      </div>
     </div>
   );
 };

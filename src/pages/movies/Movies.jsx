@@ -136,7 +136,6 @@ const Movies = () => {
 
         <div className="keyboard-movies">
           <MobileKeyboard
-            visible={activeContent === "subtitle"}
             value={
               activeInputIndex !== null ? values[activeInputIndex] || "" : ""
             }

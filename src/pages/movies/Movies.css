@@ -13,8 +13,9 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   display: grid;
+  height: 100dvh;
   grid-template-columns: 1fr;
-  grid-template-rows: 30vh 40vh 30vh;
+  grid-template-rows: 30dvh 40dvh 30dvh;
 }
 
 .section-movies {
@@ -24,6 +25,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 1rem;
+  padding: .5rem;
 }
 
 .main-movies {
@@ -33,19 +36,30 @@ body {
   border-radius: 0.2em;
   border: 1px solid gray;
   margin: 0 1rem;
+  padding: .5rem
+}
 
+.lyrics-box {
+  color: white;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.lyrics-box p {
+  line-height: 210%;
 }
 
 .keyboard-movies {
   grid-column: 1/2;
   grid-row: 3/4;
-  margin: 0 1rem;
+  margin: 0 .5rem;
 }
 
 .section-movies iframe {
   border-radius: 0.25rem;
-  height: 95%;
-  width: 76%;
+  height: 100%;
+  width: 100%;
 }
 
 .dev-info {
@@ -61,18 +75,6 @@ body {
 .git-icon {
   font-size: 25px;
   color: back;
-}
-
-.lyrics-box {
-  color: white;
-  width: 100%;
-  height: 100%;
-  padding: .5rem 1rem;
-  overflow-y: auto;
-}
-
-.lyrics-box p {
-  line-height: 210%;
 }
 
 .lyrics-input {
@@ -93,7 +95,6 @@ body {
   border: 1px solid green;
   color: white;
 }
-
 
 .buttons-movies {
   display: none;
@@ -121,6 +122,10 @@ body {
   text-align: center;
 }
 
+.input-subtitle:focus {
+  background-color: grey;
+}
+
 .input-subtitle.input-correct {
   background-color: rgb(23, 143, 23);
   color: white;
@@ -133,31 +138,25 @@ body {
 .word-bank {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-
   height: 100%;
   width: 100%;
   padding: 1rem 0;
+  overflow-y: auto;
 }
 
 .word-chip {
-
   color: white;
   height: 30px;
   text-align: center;
 }
 
-
 /* Tablets */
 @media (min-width: 768px) {
-
-
 
   .main-movies {
     margin: 0 2rem;
     padding: .5rem;
   }
-
-
 
   .section-movies iframe {
     border-radius: 0.25rem;

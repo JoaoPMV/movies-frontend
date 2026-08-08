@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Keyboard from "react-simple-keyboard";
 import "react-simple-keyboard/build/css/index.css";
 import "./MobileKeyboard.css";
+import keySound from "../assets/key-press.wav";
 
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = useState(
@@ -21,16 +22,29 @@ export default function MobileKeyboard({
   value = "",
   onChange,
   onKeyPress,
-  visible = true,
   breakpoint = 768,
   inputName = "mobileInput",
 }) {
   const isMobile = useIsMobile(breakpoint);
   const [layoutName, setLayoutName] = useState("default");
+  const audioRef = useRef(null);
 
-  if (!isMobile || !visible) return null;
+  useEffect(() => {
+    audioRef.current = new Audio(keySound);
+    audioRef.current.volume = 0.3;
+  }, []);
+
+  if (!isMobile) return null;
+
+  function playSound() {
+    if (!audioRef.current) return;
+    audioRef.current.currentTime = 0;
+    audioRef.current.play().catch(() => {});
+  }
 
   function handleKeyPress(button) {
+    playSound();
+
     if (button === "{shift}") {
       setLayoutName((prev) => (prev === "default" ? "shift" : "default"));
     } else if (button === "{numbers}") {
