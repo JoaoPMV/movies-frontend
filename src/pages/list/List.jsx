@@ -30,18 +30,16 @@ const List = () => {
             <Link
               to={`/movies/${movie.slug}`}
               key={movie.slug}
-              className="movie-link"
+              className="movie-box"
             >
-              <div className="movie-box">
-                <p className="title-movie">{movie.title}</p>
-                {movie.image && (
-                  <img
-                    className="image-movie"
-                    src={movie.image}
-                    alt={movie.title}
-                  />
-                )}
-              </div>
+              <p className="title-movie">{movie.title}</p>
+              {movie.image && (
+                <img
+                  className="image-movie"
+                  src={movie.image}
+                  alt={movie.title}
+                />
+              )}
             </Link>
           ))}
         </div>

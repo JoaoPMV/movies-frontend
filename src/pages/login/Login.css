@@ -66,13 +66,16 @@
 
   .login-area {
     width: 30%;
-    margin-right: 10rem;
+    margin-right: 9rem;
   }
 
   .login-area input {
     width: 100%;
     height: 30px;
+  }
 
+  .register-link {
+    margin-right: 9rem;
   }
 
 }

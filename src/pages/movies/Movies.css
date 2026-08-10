@@ -108,7 +108,6 @@ body {
   padding: 1.5rem .5rem;
   box-sizing: border-box;
   max-height: 220px;
-  /* ou height: 220px */
 }
 
 .input-subtitle {
@@ -153,6 +152,11 @@ body {
 /* Tablets */
 @media (min-width: 768px) {
 
+  .section-movies {
+    padding: 0;
+    margin: 0;
+  }
+
   .main-movies {
     margin: 0 2rem;
     padding: .5rem;
@@ -161,7 +165,7 @@ body {
   .section-movies iframe {
     border-radius: 0.25rem;
     height: 100%;
-    width: 42%;
+    width: 30%;
     padding: .5rem;
   }
 
@@ -175,15 +179,20 @@ body {
 @media (min-width: 1024px) {
 
   .grid-container-movies {
-
-    grid-template-rows: 40vh 60vh;
+    grid-template-rows: 50vh 50vh;
   }
 
-  .content-movies {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 50vh 50vh;
-    flex-direction: column;
+  .section-movies {
+    padding: .5rem;
+    gap: 0;
+    margin: 0;
+  }
+
+  .section-movies iframe {
+    border-radius: 0.25rem;
+    height: 100%;
+    width: 30%;
+    padding: .5rem;
   }
 
   .keyboard-movies {
@@ -199,7 +208,6 @@ body {
   }
 
   .buttons-movies button {
-
     border: none;
     border-radius: .5rem;
     width: 5rem;
@@ -209,23 +217,24 @@ body {
     padding: .3rem;
   }
 
-  .section-movies {
-    padding: 1rem;
-    gap: 1rem;
-  }
-
   .main-movies {
-    margin: 0 3rem;
-    padding: 1rem;
+
+    padding: .5rem 1rem;
     border: none;
-    border-top: 1px gray solid;
+    border-top: 1px solid grey;
+    border-radius: none;
   }
 
-  .section-movies iframe {
-    border-radius: 0.25rem;
-    height: 100%;
-    width: 38%;
+  .synopsis-box {
+    line-height: 180%;
+    text-align: center;
+    color: rgb(240, 238, 238);
+    overflow-y: auto;
+    padding: 1.5rem .5rem;
+    box-sizing: border-box;
+    max-height: 220px;
   }
+
 
   .lyrics-box p {
     line-height: 250%;
