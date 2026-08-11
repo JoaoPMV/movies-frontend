@@ -6,7 +6,7 @@
 
 .header-list {
   grid-row: 1/2;
-  background-color: blue
+  background-color: rgb(35, 72, 133);
 }
 
 .main-list {
@@ -24,7 +24,7 @@
 
 .footer-list {
   grid-row: 3/4;
-  background-color: blue
+  background-color: rgb(35, 72, 133);
 }
 
 .movie-box {
