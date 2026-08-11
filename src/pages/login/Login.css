@@ -37,6 +37,8 @@
 .login-area button {
   height: 2.2rem;
   width: 5rem;
+  border: none;
+  border-radius: 5px;
 }
 
 .login-area input:focus {

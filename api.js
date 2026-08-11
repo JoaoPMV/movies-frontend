@@ -34,6 +34,15 @@ export async function loginUser(user) {
   return await response.json();
 }
 
+export async function logout() {
+  try {
+    await fetch("/auth/logout", { method: "POST" });
+  } finally {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+  }
+}
+
 export async function listMovies() {
   const token = localStorage.getItem("token");
 

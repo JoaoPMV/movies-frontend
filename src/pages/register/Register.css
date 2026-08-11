@@ -38,6 +38,8 @@
 .register-area button {
   height: 2.2rem;
   width: 5rem;
+  border: none;
+  border-radius: 5px;
 }
 
 .login-link {
@@ -47,7 +49,6 @@
   gap: .3rem;
   align-items: end;
   margin-top: 4rem;
-
   width: 17rem;
 }
 
@@ -73,6 +74,10 @@
 @media (min-width: 1024px) {
   .register-area {
     width: 30%;
+    margin-right: 15rem;
+  }
+
+  .login-link {
     margin-right: 15rem;
   }
 }

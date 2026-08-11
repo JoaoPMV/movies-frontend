@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { listMovies } from "../../../api";
+import Navbar from "../../components/Navbar";
 
 import "./List.css";
 
@@ -24,7 +25,10 @@ const List = () => {
   return (
     <div>
       <div className="container-list">
-        <div className="header-list"></div>
+        <div className="header-list">
+          {" "}
+          <Navbar />
+        </div>
         <div className="main-list">
           {movies.map((movie) => (
             <Link
