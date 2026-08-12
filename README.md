@@ -1,30 +1,66 @@
-# Demo Movies 🎵 – Aprenda Inglês com Filmes
+# Projects: Movies 🎬 – Aprenda Inglês com Filmes
 
-Esta é uma demonstração de um projeto maior. Ele consiste em atividades para ajudar pessoas a aprender inglês de forma autodidata. Em resumo, o estudante assiste ao trailer de um filme e precisa preencher as palavras faltantes. Quando a palavra está correta, o campo fica com fundo verde.
+Aplicação web para praticar inglês com filmes.  
+O usuário assiste ao trailer e completa lacunas da legenda com as palavras corretas, treinando escuta e vocabulário.
 
-Esta demonstração reproduz visualmente a proposta do projeto completo, onde os alunos são autenticados com JWT e o progresso é salvo no MongoDB.
+## 🎯 Objetivo
 
-## Objetivo
+Oferecer uma experiência interativa de aprendizado de inglês com foco em compreensão auditiva e ampliação de vocabulário.
 
-Mostrar a estrutura e funcionamento básico da aplicação focada em aprendizado de inglês através de filmes.
+## 🛠️ Stack Tecnológico
 
-## 🛠️ Tecnologias
+### Frontend
 
 - React + Vite
 - JavaScript
 - CSS
+- React Router
+- Bootstrap
 
-## Status do Projeto
+### Backend (API)
 
-Este repositório representa apenas uma **demonstração visual** do projeto principal.
+- Node.js
+- Express
+- JWT (autenticação)
+- MongoDB (persistência de dados)
+- bcrypt (hash de senha)
 
-## Observação
+## ✨ Funcionalidades
 
-Não há backend conectado nesta demo. No projeto completo:
+- ✅ Cadastro e login de usuários
+- ✅ Autenticação com token JWT
+- ✅ Rotas protegidas
+- ✅ Listagem de filmes
+- ✅ Exercício de legenda com palavras faltantes
+- ✅ Interface responsiva para diferentes telas
 
-- usuários são autenticados via JWT
-- progresso é salvo no MongoDB
+## 🚀 Como Começar
 
----
+### Pré-requisitos
 
-✨ Protótipo feito com carinho para estudos e demonstração.
+- Node.js instalado
+- Backend rodando
+
+### Instalação
+
+```bash
+npm install
+npm run dev
+```
+
+Configure a URL do backend no `.env.local`:
+
+```
+VITE_API_URL=http://SEU_IP:PORTA_DO_BACKEND
+```
+
+Exemplo: `http://192.168.1.4:3000`
+
+## 🔗 Integração
+
+Este é o **frontend** da aplicação. O backend (API) está em:  
+👉 https://github.com/JoaoPMV/movies-backend
+
+## 📝 Status do Projeto
+
+Projeto em evolução para portfólio, com frontend e backend integrados.
