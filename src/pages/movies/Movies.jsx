@@ -62,6 +62,7 @@ const Movies = () => {
 
   return (
     <div>
+      <div className="background-blur"></div>
       <div className="grid-container-movies">
         <div className="section-movies">
           <iframe
@@ -125,11 +126,24 @@ const Movies = () => {
 
           {activeContent === "words" && (
             <div className="word-bank">
-              {shuffledAnswers.map((word, i) => (
-                <span key={`${word}-${i}`} className="word-chip">
-                  {word}
-                </span>
-              ))}
+              {shuffledAnswers.map((word, i) => {
+                const isUsed = values.some(
+                  (value, index) =>
+                    value.trim().toLowerCase() ===
+                      answers[index]?.trim().toLowerCase() &&
+                    word.trim().toLowerCase() ===
+                      answers[index]?.trim().toLowerCase(),
+                );
+
+                return (
+                  <span
+                    key={`${word}-${i}`}
+                    className={`word-chip ${isUsed ? "word-used" : ""}`}
+                  >
+                    {word}
+                  </span>
+                );
+              })}
             </div>
           )}
         </div>

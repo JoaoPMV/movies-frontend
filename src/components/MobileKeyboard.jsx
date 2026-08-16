@@ -69,21 +69,13 @@ export default function MobileKeyboard({
           default: [
             "q w e r t y u i o p",
             "a s d f g h j k l",
-            "{shift} z x c v b n m {bksp}",
-          ],
-          shift: [
-            "Q W E R T Y U I O P",
-            "A S D F G H J K L",
-            "{shift} Z X C V B N M {bksp}",
+            "' z x c v b n m {bksp}",
           ],
         }}
         display={{
           "{bksp}": "⌫",
           "{enter}": "OK",
           "{space}": "espaço",
-          "{shift}": "⇧",
-          "{numbers}": "123",
-          "{abc}": "ABC",
         }}
       />
     </div>
