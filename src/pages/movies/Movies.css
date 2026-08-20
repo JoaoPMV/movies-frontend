@@ -13,14 +13,11 @@ body {
   left: -20px;
   width: calc(100% + 40px);
   height: calc(100% + 40px);
-
   background-image: url("/images/background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   filter: blur(8px);
-
   z-index: 0;
 }
 
@@ -31,7 +28,6 @@ body {
   height: 100svh;
   grid-template-columns: 1fr;
   grid-template-rows: 30svh 42svh 28svh;
-
 }
 
 .section-movies {
@@ -41,7 +37,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 .main-movies {

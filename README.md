@@ -1,13 +1,18 @@
-# Projects: Movies 🎬 – Aprenda Inglês com Filmes
+# Movies
 
-Aplicação web para praticar inglês com filmes.  
-O usuário assiste ao trailer e completa lacunas da legenda com as palavras corretas, treinando escuta e vocabulário.
+Aplicação web para ajudar pessoas a praticar inglês através de filmes. O usuário assiste ao trailer e precisa preencher as lacunas com as palavras faltantes.
 
-## 🎯 Objetivo
+### Objetivo
 
-Oferecer uma experiência interativa de aprendizado de inglês com foco em compreensão auditiva e ampliação de vocabulário.
+Oferecer uma experiência interativa de estudo com foco em:
 
-## 🛠️ Stack Tecnológico
+- compreensão auditiva (listening)
+- ampliação de vocabulário
+- aprendizado contextualizado com palavras e expressões faladas no dia a dia
+
+---
+
+## Tecnologias Utilizadas
 
 ### Frontend
 
@@ -22,45 +27,94 @@ Oferecer uma experiência interativa de aprendizado de inglês com foco em compr
 - Node.js
 - Express
 - JWT (autenticação)
-- MongoDB (persistência de dados)
-- bcrypt (hash de senha)
+- MongoDB
+- bcrypt
 
-## ✨ Funcionalidades
+---
 
-- ✅ Cadastro e login de usuários
-- ✅ Autenticação com token JWT
-- ✅ Rotas protegidas
-- ✅ Listagem de filmes
-- ✅ Exercício de legenda com palavras faltantes
-- ✅ Interface responsiva para diferentes telas
+## Funcionalidades
 
-## 🚀 Como Começar
+- Cadastro de usuários
+- Login com autenticação JWT
+- Rotas protegidas por token
+- Listagem de filmes
+- Exercícios de legenda com palavras faltantes
+- Interface responsiva
+
+---
+
+## Melhorias Futuras
+
+- [ ] Pontuação por acertos
+- [ ] Histórico de desempenho do usuário
+- [ ] Níveis de dificuldade (fácil/médio/difícil)
+- [ ] Suporte a múltiplos idiomas
+- [ ] Modo revisão de palavras aprendidas
+
+---
+
+## Como Executar o Projeto
 
 ### Pré-requisitos
 
 - Node.js instalado
-- Backend rodando
+- Backend da aplicação em execução
 
-### Instalação
+### 1. Clonar o repositório
+
+```bash
+git clone https://github.com/JoaoPMV/movies-frontend.git
+```
+
+### 2. Acessar a pasta do projeto
+
+```bash
+cd frontend
+```
+
+### 3. Instalar as dependências
 
 ```bash
 npm install
+```
+
+### 4. Configurar variáveis de ambiente
+
+Crie um arquivo `.env.development` na raiz do projeto com:
+
+```env
+VITE_API_URL=http://SEU_BACKEND_HOST:PORTA
+```
+
+Exemplo:
+
+```env
+VITE_API_URL=http://localhost:3000
+```
+
+### 5. Executar o projeto
+
+```bash
 npm run dev
 ```
 
-Configure a URL do backend no `.env.local`:
+A aplicação ficará disponível em:
 
+```bash
+http://localhost:5173
 ```
-VITE_API_URL=http://SEU_IP:PORTA_DO_BACKEND
-```
 
-Exemplo: `http://192.168.1.4:3000`
+---
 
-## 🔗 Integração
+## Backend da Aplicação
 
-Este é o **frontend** da aplicação. O backend (API) está em:  
-👉 https://github.com/JoaoPMV/movies-backend
+Este repositório contém apenas o frontend da aplicação.  
+O backend (API) está disponível em:  
+https://github.com/JoaoPMV/movies-backend
 
-## 📝 Status do Projeto
+---
 
-Projeto em evolução para portfólio, com frontend e backend integrados.
+## Autor
+
+Desenvolvido por **JoaoPMV**  
+GitHub: https://github.com/JoaoPMV
