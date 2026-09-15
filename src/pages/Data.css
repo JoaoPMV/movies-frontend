@@ -3,22 +3,25 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 38% center;
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding-top: 20vh;
   box-sizing: border-box;
-
 }
+
+
 
 .dataForm {
   display: flex;
   flex-direction: column;
   align-items: end;
   gap: .5rem;
-  margin-right: 2rem;
-  width: 13rem;
+  margin-top: 15vh;
+  margin-right: 10vw;
+  width: 15rem;
+  height: 43vh;
+
 }
 
 .dataForm h3 {
@@ -27,7 +30,7 @@
 }
 
 .dataForm p {
-  text-align: center;
+  text-align: end;
 }
 
 .dataForm input {
@@ -59,6 +62,15 @@
   font-weight: 500;
 }
 
+.dataForm button:hover {
+  transform: translateY(-2px);
+  box-shadow: 10px 10px 24px 0px #45090059;
+}
+
+.dataForm button:active {
+  transform: translateY(0);
+}
+
 .dataForm input:focus {
   outline: none;
 }
@@ -74,7 +86,14 @@
 
 .dataNavigation a {
   text-decoration: none;
-  color: blue;
+  color: rgb(35, 35, 35);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.dataNavigation a:hover {
+  opacity: 0.7;
 }
 
 /* Tablets */
@@ -98,29 +117,33 @@
 
 /* Laptops */
 @media (min-width: 1024px) {
+
+  .dataContainer {
+    height: 100vh;
+  }
+
   .dataForm {
     width: 30%;
     margin-right: 15rem;
   }
 
+  .dataForm {
+    margin-top: 10vh;
+    height: 60vh;
+  }
+
+  .dataForm p {
+    text-align: center;
+  }
+
+  .dataForm input {
+    height: 44px;
+  }
+
   .dataNavigation {
-    margin-top: 8rem;
+    margin-top: 1rem;
     margin-right: 15rem;
   }
 
-}
 
-/* Monitores grandes */
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-}
-
-/* Telas muito grandes */
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1400px;
-  }
 }

@@ -28,25 +28,27 @@ const ForgotPassword = () => {
   }
 
   return (
-    <div className="dataContainer">
-      <form className="dataForm" onSubmit={handleSubmit}>
-        <p>You will receive an email with a link to reset your password.</p>
-        <input
-          type="email"
-          placeholder="E-mail"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <button type="submit" disabled={loading}>
-          {loading ? "Enviando..." : "Send"}
-        </button>
-      </form>
-      <div className="dataNavigation">
-        <Link to="/register">Create User</Link>
-        <Link to="/login">Login here</Link>
+    <>
+      <div className="dataContainer">
+        <form className="dataForm" onSubmit={handleSubmit}>
+          <p>You will receive an email with a link to reset your password.</p>
+          <input
+            type="email"
+            placeholder="E-mail"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <button type="submit" disabled={loading}>
+            {loading ? "Enviando..." : "Send"}
+          </button>
+        </form>
+        <div className="dataNavigation">
+          <Link to="/register">Create User</Link>
+          <Link to="/login">Login here</Link>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
