@@ -1,9 +1,34 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useMovie } from "../../hooks/useMovies";
-import { useSubtitleExercise } from "../../hooks/useSubtitleExercise";
-import MobileKeyboard from "../../components/MobileKeyboard";
+import { getMovieBySlug } from "../../moviesApi";
+import { useSubtitleExercise } from "../hooks/useSubtitleExercise";
+import MobileKeyboard from "../components/MobileKeyboard";
 import "./Movies.css";
+
+function useMovie(slug) {
+  const [movie, setMovie] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadMovie() {
+      try {
+        setLoading(true);
+        const data = await getMovieBySlug(slug);
+        setMovie(data);
+      } catch (error) {
+        console.log(error.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    if (slug) {
+      loadMovie();
+    }
+  }, [slug]);
+
+  return { movie, loading };
+}
 
 const Movies = () => {
   const touchStartX = useRef(0);
@@ -89,7 +114,7 @@ const Movies = () => {
           onTouchEnd={handleTouchEnd}
         >
           {activeContent === "subtitle" && (
-            <div className="lyrics-box">
+            <div className="subtitleBox">
               <p>
                 {parts.map((part, i) => {
                   if (part.type === "text")
@@ -121,7 +146,7 @@ const Movies = () => {
           )}
 
           {activeContent === "synopsis" && (
-            <div className="synopsis-box">{movie.synopsis}</div>
+            <div className="synopsisBox">{movie.synopsis}</div>
           )}
 
           {activeContent === "words" && (

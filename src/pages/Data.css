@@ -1,4 +1,4 @@
-.login-container {
+.dataContainer {
   background-image: url('/images/back-image.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -12,7 +12,7 @@
 
 }
 
-.login-area {
+.dataForm {
   display: flex;
   flex-direction: column;
   align-items: end;
@@ -21,12 +21,16 @@
   width: 13rem;
 }
 
-.login-area h3 {
+.dataForm h3 {
   align-self: center;
   margin-bottom: .3rem;
 }
 
-.login-area input {
+.dataForm p {
+  text-align: center;
+}
+
+.dataForm input {
   width: 100%;
   height: 2.5rem;
   padding-left: .5rem;
@@ -34,18 +38,32 @@
   border: none;
 }
 
-.login-area button {
-  height: 2.2rem;
-  width: 5rem;
-  border: none;
-  border-radius: 5px;
+.dataForm button {
+  width: 7rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(140.14deg, #ec540e 15.05%, #d6361f 114.99%) padding-box,
+    linear-gradient(142.51deg, #ff9465 8.65%, #af1905 88.82%) border-box;
+  border-radius: 7px;
+  border: 2px solid transparent;
+  text-shadow: 1px 1px 1px #00000040;
+  box-shadow: 8px 8px 20px 0px #45090059;
+  padding: 10px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
 }
 
-.login-area input:focus {
+.dataForm input:focus {
   outline: none;
 }
 
-.register-link {
+.dataNavigation {
   margin-right: 2rem;
   display: flex;
   flex-direction: column;
@@ -54,11 +72,7 @@
   margin-top: 5rem;
 }
 
-.register-link p {
-  margin: 0;
-}
-
-.register-link p a {
+.dataNavigation a {
   text-decoration: none;
   color: blue;
 }
@@ -66,17 +80,17 @@
 /* Tablets */
 @media (min-width: 768px) {
 
-  .login-area {
+  .dataForm {
     width: 30%;
     margin-right: 9rem;
   }
 
-  .login-area input {
+  .dataForm input {
     width: 100%;
     height: 30px;
   }
 
-  .register-link {
+  .dataNavigation {
     margin-right: 9rem;
   }
 
@@ -84,12 +98,12 @@
 
 /* Laptops */
 @media (min-width: 1024px) {
-  .login-area {
+  .dataForm {
     width: 30%;
     margin-right: 15rem;
   }
 
-  .register-link {
+  .dataNavigation {
     margin-top: 8rem;
     margin-right: 15rem;
   }

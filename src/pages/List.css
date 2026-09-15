@@ -1,16 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .container-list {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 10dvh minmax(80dvh, auto) 10dvh;
+  background-image: url("/images/backgroundMovies.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .header-list {
   grid-row: 1/2;
-  background-color: rgb(35, 72, 133);
+  background-color: transparent;
 }
 
 .main-list {
-  grid-row: 2/3;
+  grid-row: 2 / 3;
   padding: 1rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -24,7 +38,7 @@
 
 .footer-list {
   grid-row: 3/4;
-  background-color: rgb(35, 72, 133);
+  background-color: transparent;
 }
 
 .movie-box {
@@ -35,7 +49,10 @@
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  background-color: transparent;
 }
+
+
 
 .title-movie {
   width: 100%;
@@ -44,6 +61,9 @@
   flex-shrink: 0;
   text-align: center;
   padding-bottom: 10px;
+  background-color: transparent;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  color: white;
 }
 
 .image-movie {
@@ -52,7 +72,9 @@
   object-fit: contain;
   min-height: 0;
   border-radius: 5px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
+
 
 /* Tablets */
 @media (min-width: 768px) {
@@ -70,19 +92,31 @@
 /* Laptops */
 @media (min-width: 1024px) {
 
+  .container-list {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
   .main-list {
     grid-template-columns: repeat(5, 1fr);
+    box-sizing: border-box;
     padding: 2rem 7rem;
+    margin: 0;
   }
 
   .movie-box {
     max-width: 205px;
     max-height: 144px;
   }
+
+  .movie-box:hover .image-movie {
+    box-shadow: 0 15px 45px white;
+    transform: translateY(-3px);
+  }
+
+  .movie-box:hover .title-movie {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    background-color: transparent;
+  }
 }
-
-/* Monitores grandes */
-@media (min-width: 1280px) {}
-
-/* Telas muito grandes */
-@media (min-width: 1536px) {}

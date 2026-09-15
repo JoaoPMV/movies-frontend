@@ -1,24 +1,24 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { registerUser } from "../../../api";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import { registerUser } from "../../userApi";
 
-import "./Register.css";
+import "./Data.css";
 
 const Register = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       [e.target.name]: e.target.value,
-    });
+    }));
   };
 
   const handleSubmit = async (e) => {
@@ -26,21 +26,20 @@ const Register = () => {
 
     if (formData.password !== formData.confirmPassword) {
       alert("As senhas não coincidem.");
-
       return;
     }
 
     try {
       const userData = {
-        name: formData.name,
-        email: formData.email,
+        firstName: formData.firstName.trim(),
+        lastName: formData.lastName.trim(),
+        email: formData.email.trim(),
         password: formData.password,
       };
 
       await registerUser(userData);
 
       alert("Usuário cadastrado com sucesso!");
-
       navigate("/login");
     } catch (error) {
       console.error(error);
@@ -49,15 +48,24 @@ const Register = () => {
   };
 
   return (
-    <div className="register-container">
-      <form className="register-area" onSubmit={handleSubmit}>
+    <div className="dataContainer">
+      <form className="dataForm" onSubmit={handleSubmit}>
         <h3>Register</h3>
 
         <input
           type="text"
-          name="name"
-          placeholder="Name"
-          value={formData.name}
+          name="firstName"
+          placeholder="First name"
+          value={formData.firstName}
+          onChange={handleChange}
+          required
+        />
+
+        <input
+          type="text"
+          name="lastName"
+          placeholder="Last name"
+          value={formData.lastName}
           onChange={handleChange}
           required
         />
@@ -91,10 +99,10 @@ const Register = () => {
 
         <button type="submit">Register</button>
       </form>
-      <div className="login-link">
-        <p>
-          Already have an account? <Link to="/login">Login here</Link>
-        </p>
+
+      <div className="dataNavigation">
+        <Link to="/login">Login here</Link>
+        <Link to="/forgot-password">Forgot Password</Link>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { listMovies } from "../../../api";
-import Navbar from "../../components/Navbar";
+import { listMovies } from "../../moviesApi";
+import Navbar from "../components/Navbar";
 
 import "./List.css";
 

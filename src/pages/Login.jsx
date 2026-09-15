@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { loginUser } from "../../../api";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import { loginUser } from "../../userApi";
 
-import "./Login.css";
+import "./Data.css";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -13,10 +12,10 @@ const Login = () => {
   });
 
   function handleChange(e) {
-    setFormData({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       [e.target.name]: e.target.value,
-    });
+    }));
   }
 
   async function handleSubmit(e) {
@@ -25,26 +24,35 @@ const Login = () => {
     try {
       const data = await loginUser(formData);
 
-      localStorage.setItem("token", data.token);
+      // Salva token se existir (caso JWT já esteja implementado)
+      if (data.token) {
+        localStorage.setItem("token", data.token);
+      }
 
-      console.log("Login realizado com sucesso");
+      // Salva usuário para usar no app
+      if (data.user) {
+        localStorage.setItem("user", JSON.stringify(data.user));
+      }
 
       navigate("/list");
     } catch (error) {
       console.log(error.message);
+      alert(error.message || "Erro ao fazer login.");
     }
   }
 
   return (
-    <div className="login-container">
-      <form className="login-area" onSubmit={handleSubmit}>
+    <div className="dataContainer">
+      <form className="dataForm" onSubmit={handleSubmit}>
         <h3>Login</h3>
+
         <input
           type="email"
           name="email"
           placeholder="Email"
           value={formData.email}
           onChange={handleChange}
+          required
         />
 
         <input
@@ -53,14 +61,16 @@ const Login = () => {
           placeholder="Password"
           value={formData.password}
           onChange={handleChange}
+          required
         />
 
-        <button type="submit">Entrar</button>
+        <button type="submit">Enter</button>
       </form>
-      <div className="register-link">
-        <p>
-          Don't have an account? <Link to="/register">Register here</Link>
-        </p>
+
+      <div className="dataNavigation">
+        <Link to="/register">Create User</Link>
+
+        <Link to="/forgot-password">Forgot Password</Link>
       </div>
     </div>
   );

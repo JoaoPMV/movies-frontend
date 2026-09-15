@@ -1,6 +1,6 @@
 import React from "react";
 import "./Navbar.css";
-import { logout } from "../../api.js";
+import { logout } from "../../userApi.js";
 
 const Navbar = () => {
   async function handleLogout() {
